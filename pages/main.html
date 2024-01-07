@@ -2,47 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>首页</title>
+    <title>主界面</title>
 </head>
 <body>
     <div class="container">
-        <button id="enter" onclick="jumpMain()">
-            进入
+        <button id="click1" onclick="jumpClick1()">
+            点击1
         </button>
-        <button id="exit" onclick="closeTab()">
+        <button id="click2" onclick="jumpClick2()">
+            点击2
+        </button>
+        <button id="exit_to_index" onclick="back()">
             退出
         </button>
     </div>
 </body>
+
 </html>
-<script src="./js/sakura.js"></script>
+<script src="../js/sakura.js"></script>
 <script>
     /**
-     * 进入main.html
+     * 进入click1.html
      */
-    function jumpMain(){
-        window.location.href="pages/main.html";
+    function jumpClick1(){
+        window.location.href="click1.html";
     }
-
     /**
-     * 关闭浏览器当前标签页
+     * 进入click2.html
      */
-    function closeTab(){
-        // 方式1
-        // window.close(); // chrome不支持，反之恶意脚本注入
-
-        // 方式2：相对通用的方式（目前也不适用）
-        // window.opener=null;
-        // window.open('','_self');
-        // window.close();
-
-        // 方式3：刷成空白页面
-        window.location.href='about:blank';
+    function jumpClick2(){
+        window.location.href="click2.html";
     }
-
-
+    /**
+     * 回退到index.html
+     */
+    function back(){
+        window.history.back();
+    }
 </script>
-
 <style>
     button{
         background-color:#f66f6a;
@@ -61,7 +58,7 @@
     .container{
         display: flex;
         height: 90vh;
-        flex-direction: column;
+        flex-direction: row-reverse;
         justify-content: space-around;
         align-items: center;
     }
