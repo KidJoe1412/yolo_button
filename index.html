@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+
+    <button id="enter" onclick="jumpMain()">
+        进入
+    </button>
+    <button id="exit" onclick="closeTab()">
+        退出
+    </button>
+
+
+</body>
+</html>
+
+<script>
+    /**
+     * 进入main.html
+     */
+    function jumpMain(){
+        window.location.href="main.html";
+    }
+
+    /**
+     * 关闭浏览器当前标签页
+     */
+    function closeTab(){
+        // 方式1
+        // window.close(); // chrome不支持，反之恶意脚本注入
+
+        // 方式2：相对通用的方式（目前也不适用）
+        // window.opener=null;
+        // window.open('','_self');
+        // window.close();
+
+        // 方式3：刷成空白页面
+        window.location.href='about:blank';
+    }
+</script>
